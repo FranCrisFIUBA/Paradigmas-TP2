@@ -2,6 +2,7 @@ package io.paradigmaticos.tiles;
 
 import io.paradigmaticos.ship.Ship;
 
+// TODO: Implementar OpenSeaTile
 public class OpenSeaTile extends AbstractTile {
     @Override
     public void onShipEnter(Ship ship) {
