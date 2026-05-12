@@ -3,20 +3,56 @@ package io.paradigmaticos.ship;
 import io.paradigmaticos.tiles.ITileContent;
 
 public class Ship implements ITileContent {
-    private final ShipAttribute healthAttribute = new ShipAttribute();
-    private final ShipAttribute attackAttribute = new ShipAttribute();
-    private final ShipAttribute defenseAttribute = new ShipAttribute();
-    private final ShipAttribute movesAttribute = new ShipAttribute();
-    private final ShipAttribute rangeAttribute = new ShipAttribute();
+    private String shipName;
+    private final String kind;
+
+    private final ShipAttribute healthAttribute;
+    private final ShipAttribute attackAttribute;
+    private final ShipAttribute defenseAttribute;
+    private final ShipAttribute movesAttribute;
+    private final ShipAttribute rangeAttribute;
+
+    public Ship(
+            String shipName,
+            String kind,
+            ShipAttribute health,
+            ShipAttribute attack,
+            ShipAttribute defense,
+            ShipAttribute moves,
+            ShipAttribute range) {
+
+        setShipName(shipName);
+        this.kind = kind; // TODO: Validar kind
+
+        /* No es necesario implementar getters y setters o validar valores mínimos y máximos, ya que esa tarea queda a cargo de ShipAttribute */
+
+        this.healthAttribute = health;
+        this.attackAttribute = attack;
+        this.defenseAttribute = defense;
+        this.movesAttribute = moves;
+        this.rangeAttribute = range;
+    }
 
     @Override
     public String getName() {
-        return "";
+        return kind + " \"" + shipName + "\"";
     }
 
     @Override
     public boolean blocksNavigation() {
         return true;
+    }
+
+    public String getShipName() {
+        return shipName;
+    }
+
+    public void setShipName(String shipName) {
+        this.shipName = shipName; //TODO: Validar shipName
+    }
+
+    public String getKind() {
+        return kind;
     }
 
     public ShipAttribute getHealthAttribute() {
