@@ -1,0 +1,66 @@
+@startuml
+left to right direction
+
+package "pirates_of_paradigms" {
+    package "tiles" {
+        interface ITile
+        interface ITileContent
+        abstract AbstractTile <<package>> implements ITile
+        class BlueSeaTile extends AbstractTile
+        class StormTile extends AbstractTile
+        class PortTile extends AbstractTile
+        class MistTile extends AbstractTile
+        class ReefTile extends AbstractTile
+        class SeaCurrentTile extends AbstractTile
+        class IslandTile extends AbstractTile
+        ITileContent <. ITile : 'uses'
+    }
+
+    interface ITreasure implements tiles.ITileContent
+    class Resource implements ITreasure
+    class DynasticTreasure implements ITreasure
+    class Ship implements tiles.ITileContent
+}
+
+' ################################################################
+' Esta sección es para definir miembros y metodos
+' ################################################################
+
+interface pirates_of_paradigms.tiles.ITile {
+    + isNavigable(): bool
+    + getEffect(): IShipEffect
+    + getContent(): ITileContent
+}
+
+abstract pirates_of_paradigms.tiles.AbstractTile {
+    - content: ITileContent
+    + content(): ITileContent
+}
+
+interface pirates_of_paradigms.ITreasure {
+    + getName(): String
+    + onCollect(ship: Ship): void
+}
+
+class pirates_of_paradigms.Resource {
+    - name: String
+    - gold: int
+    - wood: int
+}
+
+class pirates_of_paradigms.DynasticTreasure {
+    owner: Fleet
+}
+
+class pirates_of_paradigms.Ship {
+    + fleet: Fleet
+    + kind: String
+    + name: String
+    - healthPoints: int
+    - attack: int
+    - defense: int
+    - moves: int
+    - range: int
+}
+
+@enduml
