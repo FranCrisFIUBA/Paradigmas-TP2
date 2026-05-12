@@ -1,16 +1,16 @@
 package io.paradigmaticos.treasures;
 
-import io.paradigmaticos.tiles.ITileContent;
+import io.paradigmaticos.ship.Ship;
 
 // TODO: Implementar Resource
-public class Resource implements ITileContent {
+public class Resource extends AbstractTreasure {
     @Override
-    public String getName() {
-        return "";
+    public void onCollect(Ship ship) {
+
     }
 
     @Override
-    public boolean blocksNavigation() {
-        return false;
+    public String getName() {
+        return "";
     }
 }
