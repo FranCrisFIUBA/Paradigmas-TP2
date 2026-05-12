@@ -38,7 +38,8 @@ interface pirates_of_paradigms.tiles.ITileContent {
 
 abstract pirates_of_paradigms.tiles.AbstractTile {
     - content: ITileContent
-    + content(): ITileContent
+    + getContent(): ITileContent
+    + setContent(content: ITileContent): void
 }
 
 interface pirates_of_paradigms.ITreasure {
