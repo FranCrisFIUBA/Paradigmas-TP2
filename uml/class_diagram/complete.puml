@@ -13,7 +13,15 @@ package "pirates_of_paradigms" {
         class ReefTile extends AbstractTile
         class SeaCurrentTile extends AbstractTile
         class IslandTile extends AbstractTile
+
         ITileContent <. ITile : 'uses'
+
+        note bottom of AbstractTile : \
+        Implementación parcial sobre\nlo correspondiente a content
+
+        note left of IslandTile : \
+        Cada clase concreta de AbstractTile es\
+        \nresponsable de implementar onShipEnter y onShipExit
     }
 
     package "treasures" {
