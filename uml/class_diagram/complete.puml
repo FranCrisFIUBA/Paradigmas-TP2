@@ -33,6 +33,8 @@ package "pirates_of_paradigms" {
     package "ship" {
         class Ship implements pirates_of_paradigms.tiles.ITileContent
         class ShipAttribute
+
+        ShipAttribute <.. Ship
     }
 }
 
@@ -84,6 +86,15 @@ class pirates_of_paradigms.ship.Ship {
     - defense: ShipAttribute
     - moves: ShipAttribute
     - range: ShipAttribute
+
+    + getFleet(): Fleet
+    + getKind(): String
+    + getName(): String
+    + getHealthPointsAttribute(): ShipAttribute
+    + getAttackAttribute(): ShipAttribute
+    + getDefenseAttribute(): ShipAttribute
+    + getMovesAttribute(): ShipAttribute
+    + getRangeAttribute(): ShipAttribute
 }
 
 class pirates_of_paradigms.ship.ShipAttribute {
