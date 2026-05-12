@@ -56,9 +56,9 @@ class pirates_of_paradigms.DynasticTreasure {
 }
 
 class pirates_of_paradigms.Ship {
-    + fleet: Fleet
-    + kind: String
-    + name: String
+    - fleet: Fleet
+    - kind: String
+    - name: String
     - healthPoints: int
     - attack: int
     - defense: int
