@@ -34,6 +34,7 @@ interface pirates_of_paradigms.tiles.ITile {
 
 interface pirates_of_paradigms.tiles.ITileContent {
     + {abstract} getName(): String
+    + {abstract} blocksNavigation(): bool
 }
 
 abstract pirates_of_paradigms.tiles.AbstractTile {
