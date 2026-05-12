@@ -27,9 +27,9 @@ package "pirates_of_paradigms" {
 ' ################################################################
 
 interface pirates_of_paradigms.tiles.ITile {
-    + isNavigable(): bool
-    + getEffect(): IShipEffect
-    + getContent(): ITileContent
+    + {abstract} isNavigable(): bool
+    + {abstract} getEffect(): IShipEffect
+    + {abstract} getContent(): ITileContent
 }
 
 abstract pirates_of_paradigms.tiles.AbstractTile {
@@ -38,8 +38,8 @@ abstract pirates_of_paradigms.tiles.AbstractTile {
 }
 
 interface pirates_of_paradigms.ITreasure {
-    + getName(): String
-    + onCollect(ship: Ship): void
+    + {abstract} getName(): String
+    + {abstract} onCollect(ship: Ship): void
 }
 
 class pirates_of_paradigms.Resource {
