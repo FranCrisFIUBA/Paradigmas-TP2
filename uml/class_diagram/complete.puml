@@ -44,6 +44,7 @@ interface pirates_of_paradigms.tiles.ITileContent {
 
 abstract pirates_of_paradigms.tiles.AbstractTile {
     - content: ITileContent
+    + {abstract} isNavigable(): bool
     + getContent(): ITileContent
     + setContent(content: ITileContent): void
 }
