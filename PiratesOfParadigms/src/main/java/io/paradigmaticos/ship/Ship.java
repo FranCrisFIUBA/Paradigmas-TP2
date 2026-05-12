@@ -12,6 +12,8 @@ public class Ship implements ITileContent {
     private final ShipAttribute movesAttribute;
     private final ShipAttribute rangeAttribute;
 
+    // TODO: Agregar la flota a la que pertenece la nave
+
     public Ship(
             String shipName,
             String kind,
