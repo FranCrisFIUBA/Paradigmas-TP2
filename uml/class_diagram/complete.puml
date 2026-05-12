@@ -33,8 +33,8 @@ package "pirates_of_paradigms" {
 
 interface pirates_of_paradigms.tiles.ITile {
     + {abstract} isNavigable(): bool
-    + {abstract} getEffect(): IShipEffect
     + {abstract} getContent(): ITileContent
+    + {abstract} setContent(content: ITileContent): void
 }
 
 interface pirates_of_paradigms.tiles.ITileContent {
