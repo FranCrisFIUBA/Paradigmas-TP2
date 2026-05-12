@@ -32,13 +32,16 @@ interface pirates_of_paradigms.tiles.ITile {
     + {abstract} getContent(): ITileContent
 }
 
+interface pirates_of_paradigms.tiles.ITileContent {
+    + {abstract} getName(): String
+}
+
 abstract pirates_of_paradigms.tiles.AbstractTile {
     - content: ITileContent
     + content(): ITileContent
 }
 
 interface pirates_of_paradigms.ITreasure {
-    + {abstract} getName(): String
     + {abstract} onCollect(ship: Ship): void
 }
 
