@@ -16,10 +16,15 @@ package "pirates_of_paradigms" {
         ITileContent <. ITile : 'uses'
     }
 
-    interface ITreasure implements tiles.ITileContent
-    class Resource implements ITreasure
-    class DynasticTreasure implements ITreasure
-    class Ship implements tiles.ITileContent
+    package "treasures" {
+        interface ITreasure implements pirates_of_paradigms.tiles.ITileContent
+        class Resource implements ITreasure
+        class DynasticTreasure implements ITreasure
+    }
+
+    package "ship" {
+        class Ship implements pirates_of_paradigms.tiles.ITileContent
+    }
 }
 
 ' ################################################################
@@ -43,21 +48,21 @@ abstract pirates_of_paradigms.tiles.AbstractTile {
     + setContent(content: ITileContent): void
 }
 
-interface pirates_of_paradigms.ITreasure {
+interface pirates_of_paradigms.treasures.ITreasure {
     + {abstract} onCollect(ship: Ship): void
 }
 
-class pirates_of_paradigms.Resource {
+class pirates_of_paradigms.treasures.Resource {
     - name: String
     - gold: int
     - wood: int
 }
 
-class pirates_of_paradigms.DynasticTreasure {
+class pirates_of_paradigms.treasures.DynasticTreasure {
     owner: Fleet
 }
 
-class pirates_of_paradigms.Ship {
+class pirates_of_paradigms.ship.Ship {
     - fleet: Fleet
     - kind: String
     - name: String
