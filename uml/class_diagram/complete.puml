@@ -17,7 +17,8 @@ package "pirates_of_paradigms" {
         ITileContent <. ITile : 'uses'
 
         note bottom of AbstractTile : \
-        Implementación parcial sobre\nlo correspondiente a content
+        Implementación parcial sobre  lo correspondiente\
+        \na content. No visible desde fuera del paquete 'tiles'
 
         note left of IslandTile : \
         Cada clase concreta de AbstractTile es\
