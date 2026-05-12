@@ -35,6 +35,10 @@ package "pirates_of_paradigms" {
         class ShipAttribute
 
         ShipAttribute <.. Ship
+
+        note bottom of ShipAttribute : \
+        Cada atributo de una nave tiene un valor actual\
+         \ny un valor total (el valor completo sin reducir)
     }
 }
 
