@@ -24,4 +24,8 @@ public class DynasticTreasure extends AbstractTreasure {
     public String getName() {
         return "";
     }
+
+    public Fleet getFleet() {
+        return fleet;
+    }
 }
