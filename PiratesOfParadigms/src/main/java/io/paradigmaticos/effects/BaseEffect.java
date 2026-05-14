@@ -1,14 +1,14 @@
 package io.paradigmaticos.effects;
 
 /**
- * Un efecto que no hace nada, solo valida si ya fue aplicado o expiró y agrega un setter para el nombre.
+ * Efecto vacio.
+ * Valida si ya fue aplicado o expiró y agrega un setter para el nombre.
  * @param <Target>
  */
-public class BaseEffect<Target> implements IEffect<Target> {
+public abstract class BaseEffect<Target> implements IEffect<Target> {
     private String name;
     private boolean applied = false;
     protected boolean expired = false;
-
 
     public BaseEffect(String name) {
         setName(name);
