@@ -1,5 +1,6 @@
 package io.paradigmaticos.ship;
 
+import io.paradigmaticos.effects.ship.ShipEffectsHandler;
 import io.paradigmaticos.fleet.Fleet;
 import io.paradigmaticos.tiles.ITileContent;
 
@@ -13,6 +14,8 @@ public class Ship implements ITileContent {
     private final ShipAttribute defenseAttribute;
     private final ShipAttribute movesAttribute;
     private final ShipAttribute rangeAttribute;
+
+    private final ShipEffectsHandler effectsHandler = new ShipEffectsHandler(this);
 
     public Ship(
             String shipName,
@@ -93,5 +96,9 @@ public class Ship implements ITileContent {
 
     public ShipAttribute getRangeAttribute() {
         return rangeAttribute;
+    }
+
+    public ShipEffectsHandler getEffectsHandler() {
+        return effectsHandler;
     }
 }
