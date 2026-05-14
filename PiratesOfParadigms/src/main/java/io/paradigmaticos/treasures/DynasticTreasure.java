@@ -1,10 +1,19 @@
 package io.paradigmaticos.treasures;
 
+import io.paradigmaticos.fleet.Fleet;
 import io.paradigmaticos.ship.Ship;
 
 // TODO: Implementar DynasticTreasure
 public class DynasticTreasure extends AbstractTreasure {
-    // TODO: Agregar flota propietaria
+    private final Fleet fleet;
+
+    public DynasticTreasure(Fleet fleet)
+    {
+        if (fleet == null)
+            throw new NullPointerException("fleet is null");
+
+        this.fleet = fleet;
+    }
 
     @Override
     public void onCollect(Ship ship) {
@@ -14,5 +23,9 @@ public class DynasticTreasure extends AbstractTreasure {
     @Override
     public String getName() {
         return "";
+    }
+
+    public Fleet getFleet() {
+        return fleet;
     }
 }
