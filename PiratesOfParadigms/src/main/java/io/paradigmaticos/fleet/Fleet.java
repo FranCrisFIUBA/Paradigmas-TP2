@@ -3,12 +3,13 @@ package io.paradigmaticos.fleet;
 import io.paradigmaticos.ship.Ship;
 import io.paradigmaticos.user.User;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fleet {
     private final String name;
     private final User commander;
-    private List<Ship> ships;
+    private final List<Ship> ships = new ArrayList<>();
 
     public Fleet(String name, User commander) {
         this.name = name; // TODO: Validar el nombre de la flota
