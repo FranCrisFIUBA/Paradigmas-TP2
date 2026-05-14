@@ -14,11 +14,11 @@ public abstract class BaseShipEffect extends BaseEffect<Ship> implements IShipEf
     }
 
     @Override
-    public void onMove(Ship ship, ITile tile) {
+    public void onMove(Ship ship, ITile current, ITile next) {
         if (ship == null)
             throw new NullPointerException("Ship cannot be null");
 
-        if (tile == null)
+        if (current == null)
             throw new NullPointerException("Tile cannot be null");
     }
 }

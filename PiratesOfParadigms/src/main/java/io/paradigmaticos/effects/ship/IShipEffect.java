@@ -5,5 +5,5 @@ import io.paradigmaticos.ship.Ship;
 import io.paradigmaticos.tiles.ITile;
 
 public interface IShipEffect extends IEffect<Ship> {
-    void onMove(Ship ship, ITile tile);
+    void onMove(Ship ship, ITile current, ITile next);
 }
