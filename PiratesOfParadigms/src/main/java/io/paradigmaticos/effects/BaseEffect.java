@@ -5,7 +5,7 @@ package io.paradigmaticos.effects;
  * Valida si ya fue aplicado o expiró y agrega un setter para el nombre.
  * @param <Target>
  */
-public abstract class BaseEffect<Target> implements IEffect<Target> {
+public class BaseEffect<Target> implements IEffect<Target> {
     private String name;
     private boolean applied = false;
     protected boolean expired = false;
