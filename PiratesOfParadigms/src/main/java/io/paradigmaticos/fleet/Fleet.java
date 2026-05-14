@@ -34,10 +34,4 @@ public class Fleet {
     public boolean removeShip(Ship ship) {
         return ships.remove(ship);
     }
-
-    /*
-    public User getOwner() {
-        return owner;
-    }
-     */
 }
