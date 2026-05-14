@@ -5,8 +5,8 @@ import io.paradigmaticos.ship.Ship;
 import io.paradigmaticos.tiles.ITile;
 
 /**
- * Efecto vacio a una nave.
- * Realiza las mismas validaciones que BaseEffect y una extra para onMove, no hace nada más
+ * Efecto vacio a una nave.</br>
+ * Realiza las mismas validaciones que BaseEffect y una extra para onMove.
  */
 public abstract class BaseShipEffect extends BaseEffect<Ship> implements IShipEffect {
     public BaseShipEffect(String name) {

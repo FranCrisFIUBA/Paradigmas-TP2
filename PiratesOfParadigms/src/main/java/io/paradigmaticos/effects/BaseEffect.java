@@ -1,7 +1,7 @@
 package io.paradigmaticos.effects;
 
 /**
- * Efecto vacio.
+ * Efecto vacio.</br>
  * Valida si ya fue aplicado o expiró y agrega un setter para el nombre.
  * @param <Target>
  */
