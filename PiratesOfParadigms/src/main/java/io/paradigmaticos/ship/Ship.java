@@ -1,10 +1,12 @@
 package io.paradigmaticos.ship;
 
+import io.paradigmaticos.fleet.Fleet;
 import io.paradigmaticos.tiles.ITileContent;
 
 public class Ship implements ITileContent {
     private String shipName;
     private final String kind;
+    private Fleet fleet;
 
     private final ShipAttribute healthAttribute;
     private final ShipAttribute attackAttribute;
@@ -12,11 +14,10 @@ public class Ship implements ITileContent {
     private final ShipAttribute movesAttribute;
     private final ShipAttribute rangeAttribute;
 
-    // TODO: Agregar la flota a la que pertenece la nave
-
     public Ship(
             String shipName,
             String kind,
+            Fleet fleet,
             ShipAttribute health,
             ShipAttribute attack,
             ShipAttribute defense,
@@ -25,6 +26,7 @@ public class Ship implements ITileContent {
 
         setShipName(shipName);
         this.kind = kind; // TODO: Validar kind
+        setFleet(fleet);
 
         /* No es necesario implementar getters y setters o validar valores mínimos y máximos, ya que esa tarea queda a cargo de ShipAttribute */
 
@@ -55,6 +57,22 @@ public class Ship implements ITileContent {
 
     public String getKind() {
         return kind;
+    }
+
+    public Fleet getFleet() {
+        return fleet;
+    }
+
+    public void setFleet(Fleet fleet) {
+        if (this.fleet != null) {
+            this.fleet.removeShip(this);
+        }
+
+        if (fleet != null) {
+            fleet.addShip(this);
+        }
+
+        this.fleet = fleet;
     }
 
     public ShipAttribute getHealthAttribute() {
